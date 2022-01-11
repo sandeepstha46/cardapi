@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+body {
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-family: 'Poppins';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-css{
+    max-width: 500px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-header1{
+    font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+span.MuiTypography-root{
+    font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+#content{
+    display: flex;
+    padding-bottom: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#content2{
+    padding-bottom: 0px;
+}
+#content-space{
+    text-align: justify;
+}
+
+#content-id{
+    font-weight: bold;
+}
+
+#button1 {
+    background-color: #000;
+    color: #fff;
+}
+
+
+#onclick {
+    justify-content: center;
+    text-align: center;
+    background: #000;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+
+.MuiButtonBase-root {
+    background-color: #000;
+    color: #fff;
 }

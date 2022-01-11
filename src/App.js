@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import { getDrinks } from "./API/drinkapi";
+import CommonCard from "./component/cardComponent/CommonCard";
 
 function App() {
+  const [drinks, setDrinks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    getNewDrink();
+  }, []);
+  const getNewDrink = () => {
+    setIsLoading(true);
+    getDrinks().then((r) => {
+      console.log(r.data.drinks);
+      setDrinks(r.data.drinks);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+    });
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {drinks.map((drink) => (
+        <CommonCard
+          onFetchNew={() => {
+            getNewDrink();
+          }}
+          drink={drink}
+          setIsLoading={setIsLoading}
+          isLoading={isLoading}
+        />
+      ))}
     </div>
   );
 }
